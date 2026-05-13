@@ -14,7 +14,11 @@ const Login = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
+        console.log(username,password);
+
         console.log("Envio");
+
+        alert("Enviando seus dados:" + username + " - " + password)
     };
 
     return (
@@ -26,14 +30,16 @@ const Login = () => {
                     <h1>Acesse Suas Finanças</h1>
 
                     <div>
-                        <input type="email" placeholder='E-mail' />
+                        <input type="email" placeholder='E-mail' 
+                        onChange={(e) => setUsername(e.target.value)} />
                         <FaUser className='Icon' />
 
                     </div>
 
 
                     <div>
-                        <input type="password" placeholder='Senha' />
+                        <input type="password" placeholder='Senha' 
+                        onChange={(e) => setPassword(e.target.value)} />
                         <FaLock className='Icon' />
 
                     </div>
@@ -44,7 +50,7 @@ const Login = () => {
                             Lembre de mim
                         </label>
 
-                        <a href="#">Esqueceu a senhs?</a>
+                        <a href="#">Esqueceu a senha?</a>
 
                     </div>
 
