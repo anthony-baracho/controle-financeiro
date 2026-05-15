@@ -1,6 +1,6 @@
 import React from 'react'
 
-const releases = () => {
+const Releases = () => {
   return (
     <div>
       <h1>Lançamentos de Despesas</h1>
@@ -8,4 +8,4 @@ const releases = () => {
   )
 }
 
-export default releases
+export default Releases
