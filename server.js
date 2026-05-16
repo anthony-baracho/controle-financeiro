@@ -24,7 +24,11 @@ MongoDB
 usuario: ruank256_db_user
 senha: oE7zgb9aBkLivDRH
 
+em caso de conflito: rm package-lock.json 
+
 iniciar servidor: node --watch server.js
 parar servidor: ctrl + C
-iniciar o prisma: npx prisma init
+iniciar o prisma: npx prisma db push
+
+
 */
