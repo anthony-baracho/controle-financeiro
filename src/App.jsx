@@ -1,6 +1,8 @@
 
 import './App.css'
-import Login from './Components/Login/Login';
+import Login from './pages/Login';
+
+import { Outlet } from 'react-router-dom';
 
 function App() {
 
@@ -8,7 +10,9 @@ function App() {
   return (
 
     <div className="App">
+      <Outlet />
       <Login />
+
     </div>
   );
 }
