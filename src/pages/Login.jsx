@@ -1,15 +1,13 @@
 import React from 'react';
-
 import { FaUser, FaLock } from 'react-icons/fa';
-
 import { useState } from 'react';
-
-import "./Login.css";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate(); 
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -18,7 +16,9 @@ const Login = () => {
 
         console.log("Envio");
 
-        alert("Enviando seus dados:" + username + " - " + password)
+        navigate('/home');
+
+        
     };
 
     return (
