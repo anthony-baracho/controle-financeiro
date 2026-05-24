@@ -11,6 +11,8 @@ import Releases from './pages/Releases.jsx';
 import Kpis from './pages/Kpis.jsx';
 import Investments from './pages/Investments.jsx';
 
+import { FinanceProvider } from './context/FinanceContext.jsx'
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,6 +41,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <FinanceProvider>
     <RouterProvider router={router} />
+    </FinanceProvider>
   </StrictMode>,
 )

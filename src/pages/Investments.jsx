@@ -1,31 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-const Investments = () => {
+import { FinanceContext } from '../context/FinanceContext';
 
+const Investments = () => {
+  
+  const { investments, addInvestment } = useContext(FinanceContext);
+
+  
   const [investName, setInvestName] = useState('');
   const [investValue, setInvestValue] = useState('');
   const [investType, setInvestType] = useState('Renda Fixa');
 
   const handleAddInvestment = (e) => {
-
     e.preventDefault();
+    
+    const newInvestment = {
+      investName,
+      investType,
+      investValue: Number(investValue) 
+    };
 
-    console.log('Novo Investimento', { investName, investValue, investType });
-
+    addInvestment(newInvestment);
+    
     setInvestName('');
     setInvestValue('');
   };
 
   return (
     <div>
-
       <header>
         <Link to="/home">
-          <button type="button">Voltar para a Home</button>
+          <button type="button">⬅ Voltar para a Home</button>
         </Link>
-
-        <h1>Carteira de Investimentos</h1>
+        <h1>Painel de Investimentos</h1>
       </header>
 
       <hr />
@@ -34,13 +42,13 @@ const Investments = () => {
         <h2>Novo Investimento</h2>
         <form onSubmit={handleAddInvestment}>
           <div>
-            <label>Nome do Ativo:</label>
-            <input
-              type="text"
-              placeholder="Ex: CDB"
+            <label>Nome do Ativo: </label>
+            <input 
+              type="text" 
+              placeholder="Ex: CDB Itaú" 
               value={investName}
               onChange={(e) => setInvestName(e.target.value)}
-              required
+              required 
             />
           </div>
 
@@ -57,16 +65,16 @@ const Investments = () => {
           </div>
 
           <div>
-            <label>Tipo de Investimento:</label>
+            <label>Tipo de Investimento: </label>
             <select value={investType} onChange={(e) => setInvestType(e.target.value)}>
               <option value="Renda Fixa">Renda Fixa</option>
-              <option value="Renda Variável">Renda Variável</option>
+              <option value="Renda Variável (Ações)">Renda Variável (Ações)</option>
               <option value="Fundo Imobiliário">Fundo Imobiliário</option>
               <option value="Criptoativos">Criptoativos</option>
             </select>
           </div>
 
-          <button type="submit" style={{ marginTop: '10px' }}>Salvar</button>
+          <button type="submit" style={{ marginTop: '10px' }}>Registrar</button>
         </form>
       </section>
 
@@ -74,38 +82,37 @@ const Investments = () => {
 
       <section>
         <h2>Ativos Atuais</h2>
-        <table border="1" style={{ width: "100%", textAlign: 'left', borderCollapse: "collapse" }}>
+        <table border="1" style={{ width: '100%', textAlign: 'left', borderCollapse: 'collapse' }}>
           <thead>
-            <tr style={{ backgroungColor: '#e8f4fd' }}>
+            <tr style={{ backgroundColor: '#e8f4fd' }}>
               <th>Ativo</th>
               <th>Tipo</th>
               <th>Total Investido</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>CDB</td>
-              <td>Renda Fixa</td>
-              <td>R$ 1.000,00</td>
-            </tr>
-
-            <tr>
-              <td>Ações</td>
-              <td>Renda Variável</td>
-              <td>R$ 500,00</td>
-            </tr>
+           
+            {investments.length === 0 ? (
+              <tr>
+                <td colSpan="3" style={{ textAlign: 'center', padding: '10px' }}>
+                  Nenhum investimento registrado ainda.
+                </td>
+              </tr>
+            ) : (
+           
+              investments.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.investName}</td>
+                  <td>{item.investType}</td>
+                  <td>R$ {Number(item.investValue).toFixed(2).replace('.', ',')}</td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </section>
     </div>
+  );
+};
 
-
-  )
-
-}
-
-
-
-
-
-export default Investments
+export default Investments;
