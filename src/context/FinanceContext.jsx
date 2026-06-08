@@ -4,8 +4,7 @@ export const FinanceContext = createContext();
 export const FinanceProvider = ({ children }) => {
 
 
-    const [theme, setTheme] = useState('dark'); // Começa no dark por padrão
-
+   
 const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
 };
