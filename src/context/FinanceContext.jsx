@@ -1,36 +1,39 @@
-import React, { Children, createContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 export const FinanceContext = createContext();
+
 export const FinanceProvider = ({ children }) => {
+  const [expenses, setExpenses] = useState([]);
+  const [investments, setInvestments] = useState([]);
+  
+  // controle de saldo 
+  const [saldoInicial, setSaldoInicial] = useState(0);
 
+  const adicionarSaldo = (valor) => {
+    setSaldoInicial((prevSaldo) => prevSaldo + parseFloat(valor));
+  };
 
-   
-const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
-};
-    const [initialBalance, setInitialBalance] = useState(5000.00);
-    const [expenses, setExpenses] = useState([]);
+  const addExpense = (expense) => setExpenses([...expenses, expense]);
+  const addInvestment = (investment) => setInvestments([...investments, investment]);
 
-    const [investments, setInvestments] = useState ([]);
+  // calculos matematicos
+  const totalDespesas = expenses.reduce((acc, curr) => acc + (parseFloat(curr.value) || 0), 0);
+  const totalInvestido = investments.reduce((acc, curr) => acc + (parseFloat(curr.value) || 0), 0);
+  const saldoFinal = saldoInicial - totalDespesas;
 
-    const addExpense = (newExpense) => {
-        setExpenses((prev) => [...prev, { id: Date.now(), ...newExpense}])
-    };
-
-    const addInvestment = (newInvestment) => {
-        setInvestments((prev) => [...prev, { id: Date.now(), ...newInvestment}])
-    };
-
-return (
-    <FinanceContext.Provider value={{
-        expenses,
-        investments,
-        initialBalance,
-        addExpense,
-        addInvestment
+  return (
+    <FinanceContext.Provider value={{ 
+      expenses, 
+      investments, 
+      addExpense, 
+      addInvestment,
+      saldoInicial,
+      saldoFinal,
+      totalDespesas,
+      totalInvestido,
+      adicionarSaldo
     }}>
-        {children}
+      {children}
     </FinanceContext.Provider>
-);
+  );
 };
-

@@ -35,7 +35,7 @@ const Login = () => {
                             💸
                         </div>
                         <h3 className="font-semibold text-white text-sm">Controle de Gastos</h3>
-                        <p className="text-xs text-slate-500 mt-1">Registre despesas diárias separadas por categorias estratégicas.</p>
+                        <p className="text-xs text-slate-500 mt-1">Registre gastos diários separados por categorias.</p>
                     </div>
 
                     <div className="p-4 bg-slate-950 border border-slate-800/60 rounded-xl text-center sm:text-left">
@@ -43,15 +43,15 @@ const Login = () => {
                             📈
                         </div>
                         <h3 className="font-semibold text-white text-sm">Investimentos</h3>
-                        <p className="text-xs text-slate-500 mt-1">Monitore sua carteira de investimentos e evolução patrimonial.</p>
+                        <p className="text-xs text-slate-500 mt-1">Monitore seus investimentos.</p>
                     </div>
 
                     <div className="p-4 bg-slate-950 border border-slate-800/60 rounded-xl text-center sm:text-left">
                         <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-xl mb-3 mx-auto sm:mx-0">
                             📊
                         </div>
-                        <h3 className="font-semibold text-white text-sm">Análise de Detalhada</h3>
-                        <p className="text-xs text-slate-500 mt-1">Gráficos de barras inteligentes que indicam o peso de cada custo.</p>
+                        <h3 className="font-semibold text-white text-sm">Análise Detalhada</h3>
+                        <p className="text-xs text-slate-500 mt-1">Gráficos inteligentes que mostram para onde está indo o dinheiro.</p>
                     </div>
 
                 </div>
@@ -61,7 +61,7 @@ const Login = () => {
                     onClick={handleEnter}
                     className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-xl text-sm transition-all shadow-lg shadow-blue-600/20 active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer"
                 >
-                    Acessar o Painel do Sistema 🚀
+                    Acessar o Painel do Sistema
                 </button>
             </div>
 
