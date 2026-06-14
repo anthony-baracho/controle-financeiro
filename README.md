@@ -1,16 +1,221 @@
-# React + Vite
+# 💰 Controle Financeiro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto de aplicação web desenvolvido com **React + Vite**, utilizando **TailwindCSS** para estilização e **Docker + Nginx** para deploy em produção.
 
-Currently, two official plugins are available:
+------
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Tecnologias utilizadas
 
-## React Compiler
+- ⚛️ React
+- ⚡ Vite
+- 🎨 TailwindCSS
+- 🟢 Node.js
+- 🐳 Docker
+- 🌐 Nginx
+- 📦 npm
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+------
 
-## Expanding the ESLint configuration
+## 📌 Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Interface moderna e responsiva
+- Estrutura baseada em componentes React
+- Estilização com TailwindCSS
+- Build otimizado com Vite
+- Deploy via Docker containerizado
+
+------
+
+## ⚙️ Instalação e execução local
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/anthony-baracho/controle-financeiro.git
+```
+
+
+### 2. Acesse a pasta
+
+```bash
+cd controle-financeiro
+```
+
+
+### 3. Instale as dependências
+
+```bash
+npm install
+```
+
+
+### 4. Rode o projeto em modo desenvolvimento
+
+```bash
+npm run dev
+```
+
+
+A aplicação ficará disponível em:
+
+
+http://localhost:5173
+
+
+------
+
+## 🏗️ Build de produção
+
+Para gerar a versão otimizada:
+
+```bash
+npm run build
+```
+
+A saída será gerada na pasta:
+
+
+dist/
+
+
+------
+
+## 🐳 Docker
+
+Docker é necessário para testar a versão de produção.
+
+### 📦 Build da imagem
+
+```bash
+docker build -t controle-financeiro .
+```
+
+### ▶️ Executar container
+
+```bash
+docker run -p 8080:80 controle-financeiro
+```
+
+A aplicação ficará disponível em:
+
+
+http://localhost:8080
+
+
+------
+
+## 🧱 Arquitetura do Docker
+
+O projeto utiliza **multi-stage build**:
+
+1. **Node.js** → instala dependências e gera build do Vite
+2. **Nginx** → serve os arquivos estáticos da pasta `dist`
+
+Fluxo:
+
+
+React (Vite) → build → dist → Nginx → navegador
+
+
+------
+
+## ⚠️ Problemas encontrados e soluções
+
+### ❌ Erro PostCSS / Tailwind
+
+
+Cannot find module '@tailwindcss/postcss'
+
+
+✔️ Solução:
+
+```bash
+npm install -D @tailwindcss/postcss
+```
+
+------
+
+### ❌ Erro Dockerfile inválido
+
+
+unknown instruction
+
+
+✔️ Solução:
+
+* remoção de caracteres inválidos no início do arquivo
+
+------
+
+### ❌ Porta já em uso
+
+
+port is already allocated (8080)
+
+
+✔️ Solução:
+
+* encerrar container anterior ou usar outra porta
+
+------
+
+### ❌ Arquivo inesperado no Git
+
+
+on package-lock.json
+
+
+✔️ Solução:
+
+* remoção manual do arquivo
+* limpeza do repositório
+
+------
+
+## 🔧 Git workflow utilizado
+
+```bash
+git add .
+git commit -m "Descrição das alterações"
+git push
+```
+
+------
+
+## 📁 Estrutura do projeto
+
+
+controle-financeiro/
+├── src/
+├── public/
+├── dist/
+├── Dockerfile
+├── package.json
+├── package-lock.json
+├── vite.config.js
+├── tailwind.config.js
+└── postcss.config.js
+
+
+------
+
+## 🎯 Status do projeto
+
+✔️ Build funcionando
+✔️ Docker funcionando
+✔️ Tailwind configurado
+✔️ Vite otimizado
+✔️ Pronto para deploy
+
+------
+
+## 📌 Autores
+
+- Ruan Kelvin Vieira dos Santos
+- Anthony Gabriel Lemos Baracho
+- Phellipe de Amorim Martins
+- Fernanda Nogueira de França
+- Adriano Silva do Nascimento
+- Everton Hasabias Furtunato Celestino
+
+Projeto Desenvolvido para a Disciplina de Códigos de Alta Performance.
