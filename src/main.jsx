@@ -12,6 +12,7 @@ import Kpis from './pages/Kpis.jsx';
 import Investments from './pages/Investments.jsx';
 
 import { FinanceProvider } from './context/FinanceContext.jsx'
+import NotFound from './pages/NotFound.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,11 @@ const router = createBrowserRouter([
   {
     path: "investments",
     element: <Investments />
-  }]);
+  },
+  {
+  path: "*",
+  element: <NotFound />
+}]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
