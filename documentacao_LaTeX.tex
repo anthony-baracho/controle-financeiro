@@ -1,0 +1,597 @@
+
+\documentclass{article}
+
+\usepackage[left=3cm,top=3cm,right=2cm,bottom=2cm,a4paper]{geometry}
+\usepackage{anyfontsize}
+\usepackage[indent=0cm,skip=.1cm]{parskip}
+\usepackage[brazil]{babel}
+
+\begin{document}
+\fontsize{12pt}{18pt}\selectfont
+
+%=====================================
+% CAPA
+%=====================================
+
+\begin{titlepage}
+
+\begin{center}
+
+FACULDADE MAURÍCIO DE NASSAU
+
+\vspace{2cm}
+
+Phellipe de Amorim martins - 01782567
+
+Anthony Gabriel Lemos Baracho - 01813891
+
+Ruan Kelvin Vieira dos Santos - 01797916
+
+Everton Hasabias Furtunato Celestino - 1796727
+
+Adriano Silva do Nascimento - 01769583
+
+Fernanda Nogueira de França - 01735985
+
+\vfill
+
+{\fontsize{16pt}{20pt}\selectfont\textbf{CÓDIGOS DE ALTA PERFORMANCE}}
+
+\vspace{0.5cm}
+
+NEXPAY
+
+\vfill
+
+Maceió - AL
+
+Junho de 2026
+
+\end{center}
+
+\end{titlepage}
+
+%=====================================
+% FOLHA DE ROSTO
+%=====================================
+
+\begin{titlepage}
+
+\begin{center}
+
+Phellipe de Amorim martins - 01782567
+
+Anthony Gabriel Lemos Baracho - 01813891
+
+Ruan Kelvin Vieira dos Santos - 01797916
+
+Everton Hasabias Furtunato Celestino - 1796727
+
+Adriano Silva do Nascimento - 01769583
+
+Fernanda Nogueira de França - 01735985
+
+\vspace{6cm}
+
+{\fontsize{16pt}{20pt}\selectfont\textbf{CÓDIGOS DE ALTA PERFORMANCE}}
+
+\vspace{0.5cm}
+
+NEXPAY
+
+\end{center}
+
+\vspace{3cm}
+
+\hspace*{7cm}
+\parbox{8cm}{
+Trabalho apresentado à disciplina de
+Códigos de Alta perfomance do curso de
+Ciências da Computação da Faculdade Maurício de Nassau,
+como requisito para obtenção de nota.
+
+\vspace{0.5cm}
+
+Professor(a): Anderlan Henrique Batista Siqueira
+}
+
+\vfill
+
+\begin{center}
+
+Maceió - AL
+
+Junho de 2026
+
+\end{center}
+
+\end{titlepage}
+
+
+\tableofcontents
+\newpag
+
+\clearpage
+\section{Introdução ao sistema}
+
+\subsection{Nome do Sistema}
+
+Nexpay.
+
+\subsection{Problema}
+
+Ajudar pessoas que possuem dificuldades para organizar e controlar suas finanças pessoais.
+
+\subsection{Público-Alvo}
+
+Jovens e adultos que desejam melhorar o gerenciamento de seus recursos financeiros.
+
+\subsection{Objetivo Principal}
+
+Centralizar a gestão financeira em uma única plataforma, permitindo ao usuário acompanhar receitas, despesas e saldo disponível de forma prática e segura.
+
+\subsection{Contexto de Uso}
+
+O sistema foi pensado principalmente para jovens que estão iniciando sua carreira profissional e ainda não possuem experiência suficiente para administrar seu dinheiro de maneira eficiente.
+
+\section{Arquitetura como Decisão}
+
+\subsection{Qual será a estrutura inicial do sistema?}
+
+A estrutura inicial adotada será a arquitetura monolítica. Essa abordagem foi escolhida por ser mais simples de desenvolver, implantar e manter durante as fases iniciais do projeto, além de ser adequada para sistemas de pequeno porte.
+
+
+\subsection{O que foi priorizado no início?}
+
+Os aspectos priorizados na fase inicial do desenvolvimento foram:
+
+\begin{itemize}
+    \item Segurança dos dados;
+    \item Estabilidade do sistema;
+\end{itemize}
+
+\subsection{O que foi deixado para uma evolução futura?}
+
+As seguintes funcionalidades poderão ser implementadas em versões futuras:
+
+\begin{itemize}
+    \item Notificações inteligentes;
+    \item Relatórios financeiros detalhados;
+    \item Sistema de gestão avançado para Pessoa Jurídica (CNPJ).
+\end{itemize}
+
+\section{Requisitos}
+
+\subsection{Requisitos Funcionais}
+
+\begin{itemize}
+    \item Registro de receitas financeiras;
+    \item Registro de despesas financeiras;
+    \item Edição e exclusão de movimentações financeiras;
+    \item Categorização de despesas (alimentação, transporte, lazer, salário, entre outras);
+    \item Exibição do saldo total atualizado do usuário;
+\end{itemize}
+
+\subsection{Requisitos Não Funcionais}
+
+\begin{itemize}
+    \item Segurança;
+    \item Desempenho;
+    \item Escalabilidade;
+    \item Confiabilidade;
+    \item Usabilidade.
+\end{itemize}
+
+
+\section{Tecnologias Utilizadas}
+
+O desenvolvimento do sistema Nexpay utiliza tecnologias modernas que permitem a construção de uma aplicação web eficiente, escalável e de fácil manutenção.
+
+\subsection{React}
+
+O React é uma biblioteca JavaScript utilizada para a construção da interface do usuário. Sua arquitetura baseada em componentes facilita a reutilização de código, a organização do projeto e a manutenção da aplicação. Além disso, o React proporciona uma experiência mais dinâmica e responsiva para os usuários.
+
+\subsection{Node.js}
+
+O Node.js é o ambiente de execução utilizado no lado do servidor. Sua principal função é processar as requisições da aplicação, implementar as regras de negócio e realizar a comunicação com o banco de dados. A utilização do Node.js permite alto desempenho e facilita o desenvolvimento utilizando a linguagem JavaScript tanto no front-end quanto no back-end.
+
+\subsection{Tailwind CSS}
+
+O Tailwind CSS é um framework de estilização baseado em classes utilitárias. Ele foi escolhido por possibilitar a criação de interfaces modernas e responsivas de forma rápida e padronizada. Além disso, reduz a necessidade de escrever grandes arquivos CSS, tornando o desenvolvimento mais produtivo e organizado.
+
+
+
+\section{Estrutura do Projeto}
+
+O projeto Nexpay foi organizado seguindo uma estrutura modular, com separação das responsabilidades entre interface, gerenciamento de estado e páginas da aplicação. Essa organização facilita a manutenção, a escalabilidade e o desenvolvimento de novas funcionalidades.
+
+\subsection{Estrutura de Diretórios}
+
+\begin{itemize}
+    \item \textbf{node\_modules/}: diretório gerado automaticamente pelo NPM, contendo todas as dependências utilizadas pelo projeto.
+
+    \item \textbf{public/}: armazena arquivos públicos que podem ser acessados diretamente pela aplicação, como ícones, imagens e outros recursos estáticos.
+
+    \item \textbf{src/}: diretório principal do código-fonte da aplicação.
+    
+    \begin{itemize}
+        \item \textbf{assets/}: contém recursos estáticos utilizados pela interface, como imagens, ícones e arquivos de mídia.
+        
+        \item \textbf{context/}: responsável pelo gerenciamento de estado global da aplicação.
+        
+        \begin{itemize}
+            \item \textbf{FinanceContext.jsx}: centraliza informações financeiras compartilhadas entre diferentes componentes da aplicação.
+        \end{itemize}
+        
+        \item \textbf{pages/}: contém as páginas principais do sistema.
+        
+        \begin{itemize}
+            \item \textbf{Home.jsx}: página inicial da aplicação.
+            \item \textbf{Investments.jsx}: gerenciamento e visualização de investimentos.
+            \item \textbf{Kpis.jsx}: exibição de indicadores e métricas financeiras.
+            \item \textbf{Login.jsx}: autenticação e acesso dos usuários.
+            \item \textbf{Releases.jsx}: gerenciamento e visualização de receitas e despesas financeiras.
+        \end{itemize}
+        
+        \item \textbf{App.jsx}: componente principal da aplicação responsável pela renderização da interface.
+        
+        \item \textbf{App.css}: arquivo de estilos específicos do componente principal.
+        
+        \item \textbf{index.css}: arquivo global de estilização da aplicação.
+        
+        \item \textbf{main.jsx}: ponto de entrada da aplicação React, responsável por inicializar a renderização dos componentes.
+    \end{itemize}
+
+    \item \textbf{postcss.config.js}: configuração do PostCSS utilizado pelo Tailwind CSS.
+
+\end{itemize}
+
+\subsection{Organização Arquitetural}
+
+A estrutura foi projetada para separar responsabilidades entre apresentação, gerenciamento de estado e configuração da aplicação. As páginas ficam concentradas no diretório \texttt{pages}, o compartilhamento de dados é realizado por meio do \texttt{FinanceContext}, enquanto os arquivos de configuração permanecem na raiz do projeto. Essa organização contribui para a legibilidade do código, facilita a manutenção e permite a evolução futura do sistema.
+
+
+\section{Principais Classes e Funções}
+
+
+Esta seção descreve a estrutura principal da aplicação de controle financeiro desenvolvida em React, detalhando os componentes, contextos e funções que compõem o sistema.
+
+% ─────────────────────────────────────────────
+\subsection{Ponto de Entrada — \texttt{main.jsx}}
+% ─────────────────────────────────────────────
+
+O arquivo \texttt{main.jsx} é o ponto de inicialização da aplicação. Ele é responsável por três responsabilidades centrais: configurar o roteamento, fornecer o contexto global de estado e montar a árvore de componentes no DOM.
+
+\subsubsection*{Roteamento com \texttt{createBrowserRouter}}
+
+O roteamento é gerenciado pela biblioteca \texttt{react-router-dom}. A função \texttt{createBrowserRouter} recebe um array de objetos de rota, cada um contendo os campos \texttt{path} (caminho da URL) e \texttt{element} (componente React a ser renderizado). As rotas definidas são:
+
+\begin{itemize}
+  \item \texttt{/} — renderiza o componente \texttt{Login};
+  \item \texttt{home} — renderiza o componente \texttt{Home};
+  \item \texttt{releases} — renderiza o componente \texttt{Releases};
+  \item \texttt{kpis} — renderiza o componente \texttt{Kpis};
+  \item \texttt{investments} — renderiza o componente \texttt{Investments}.
+\end{itemize}
+
+\subsubsection*{Montagem e Providers}
+
+A montagem ocorre via \texttt{createRoot}, que recebe o elemento HTML com \texttt{id="root"} como âncora. O método \texttt{.render()} recebe a árvore de componentes envolvida por dois provedores:
+
+\begin{itemize}
+  \item \texttt{StrictMode} — ativa verificações adicionais de desenvolvimento fornecidas pelo próprio React, como detecção de efeitos colaterais inesperados;
+  \item \texttt{FinanceProvider} — provedor do contexto global de finanças, que disponibiliza estado e funções para todos os componentes filhos;
+  \item \texttt{RouterProvider} — injeta o roteador configurado em toda a aplicação.
+\end{itemize}
+
+% ─────────────────────────────────────────────
+\subsection{Componente \texttt{Home}}
+% ─────────────────────────────────────────────
+
+O componente \texttt{Home} serve como painel principal da aplicação, exibindo um resumo financeiro do usuário e permitindo o acréscimo de saldo.
+
+\subsubsection*{Consumo de Contexto}
+
+Por meio do hook \texttt{useContext(FinanceContext)}, o componente acessa as seguintes variáveis e funções globais:
+
+\begin{itemize}
+  \item \texttt{saldoFinal} — valor numérico que representa o saldo disponível após descontar despesas e investimentos;
+  \item \texttt{totalDespesas} — soma acumulada de todos os gastos registrados;
+  \item \texttt{totalInvestido} — soma acumulada de todos os investimentos registrados;
+  \item \texttt{adicionarSaldo} — função que incrementa o saldo global com um valor fornecido pelo usuário.
+\end{itemize}
+
+\subsubsection*{Estado Local}
+
+O estado local \texttt{novoSaldo}, inicializado em string vazia via \texttt{useState}, armazena temporariamente o valor digitado no campo de entrada antes de ser submetido.
+
+\subsubsection*{Função \texttt{handleAumentarSaldo}}
+
+Esta função é acionada no envio do formulário. Ela realiza as seguintes etapas:
+
+\begin{enumerate}
+  \item Chama \texttt{e.preventDefault()} para impedir o recarregamento da página;
+  \item Valida se \texttt{novoSaldo} não está vazio, é um número válido e é positivo — caso contrário, aborta a execução;
+  \item Invoca \texttt{adicionarSaldo(novoSaldo)}, propagando o valor para o contexto global;
+  \item Limpa o campo de entrada atribuindo string vazia ao estado \texttt{novoSaldo}.
+\end{enumerate}
+
+% ─────────────────────────────────────────────
+\subsection{Componente \texttt{Releases}}
+% ─────────────────────────────────────────────
+
+O componente \texttt{Releases} é responsável pelo registro de despesas. O usuário informa uma descrição, um valor e uma categoria, e o lançamento é persistido no contexto global.
+
+\subsubsection*{Consumo de Contexto}
+
+Via \texttt{useContext(FinanceContext)}, o componente obtém:
+
+\begin{itemize}
+  \item \texttt{expenses} — array com todas as despesas registradas;
+  \item \texttt{addExpense} — função que adiciona um novo objeto de despesa ao estado global.
+\end{itemize}
+
+\subsubsection*{Estados Locais}
+
+Três estados locais controlam os campos do formulário:
+
+\begin{itemize}
+  \item \texttt{description} — texto descritivo do gasto;
+  \item \texttt{value} — valor monetário em formato string (convertido para \texttt{float} no envio);
+  \item \texttt{category} — categoria do gasto, com valor padrão \texttt{"Alimentação"}.
+\end{itemize}
+
+\subsubsection*{Função \texttt{handleSubmit}}
+
+Ao enviar o formulário, a função executa:
+
+\begin{enumerate}
+  \item \texttt{e.preventDefault()} para suprimir o comportamento padrão do navegador;
+  \item Validação mínima: se \texttt{description} ou \texttt{value} estiverem vazios, a execução é interrompida;
+  \item Criação de um objeto de despesa com os campos \texttt{id} (gerado por \texttt{Date.now()}), \texttt{description}, \texttt{value} (convertido com \texttt{parseFloat}), \texttt{category} e \texttt{date} (formatada para o padrão brasileiro via \texttt{toLocaleDateString('pt-BR')});
+  \item Chamada de \texttt{addExpense} com o objeto construído;
+  \item Limpeza dos campos \texttt{description} e \texttt{value}.
+\end{enumerate}
+
+% ─────────────────────────────────────────────
+\subsection{Componente \texttt{Kpis}}
+% ─────────────────────────────────────────────
+
+O componente \texttt{Kpis} (Key Performance Indicators) exibe métricas e indicadores visuais de gastos agrupados por categoria.
+
+\subsubsection*{Consumo de Contexto}
+
+Apenas \texttt{expenses} é consumido do contexto, pois o componente é exclusivamente de leitura e visualização.
+
+\subsubsection*{Cálculo dos Totais por Categoria}
+
+As categorias válidas são definidas estaticamente no array \texttt{categoriasValidas}:
+
+\begin{center}
+  \texttt{['Alimentação', 'Transporte', 'Lazer', 'Moradia', 'Outros']}
+\end{center}
+
+O objeto \texttt{totaisPorCategoria} é inicializado com \texttt{reduce}, atribuindo zero a cada categoria. Em seguida, o array \texttt{expenses} é percorrido com \texttt{forEach}: para cada despesa, o valor numérico é somado ao total geral (\texttt{totalCalculadoGeral}) e ao total da categoria correspondente. Despesas com categorias não reconhecidas são acumuladas em \texttt{'Outros'}.
+
+\subsubsection*{Mapeamento de Cores}
+
+O objeto \texttt{coresBarras} associa cada categoria a uma classe CSS do Tailwind, utilizada para colorir as barras de progresso exibidas na interface:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\hline
+\textbf{Categoria} & \textbf{Classe CSS} \\
+\hline
+Alimentação & \texttt{bg-amber-500} \\
+Transporte  & \texttt{bg-blue-500} \\
+Lazer       & \texttt{bg-purple-500} \\
+Moradia     & \texttt{bg-pink-500} \\
+Outros      & \texttt{bg-slate-500} \\
+\hline
+\end{tabular}
+\caption{Mapeamento de categorias para classes de cor (Tailwind CSS)}
+\end{table}
+
+% ─────────────────────────────────────────────
+\subsection{Componente \texttt{Investments}}
+% ─────────────────────────────────────────────
+
+O componente \texttt{Investments} segue a mesma estrutura do componente \texttt{Releases}, mas voltado ao registro de investimentos.
+
+\subsubsection*{Consumo de Contexto}
+
+Via \texttt{useContext(FinanceContext)}, o componente obtém:
+
+\begin{itemize}
+  \item \texttt{investments} — array com todos os investimentos registrados;
+  \item \texttt{addInvestment} — função que insere um novo investimento no estado global.
+\end{itemize}
+
+\subsubsection*{Estados Locais}
+
+Três estados controlam o formulário:
+
+\begin{itemize}
+  \item \texttt{description} — nome ou descrição do investimento;
+  \item \texttt{value} — valor aportado;
+  \item \texttt{type} — tipo do investimento, com valor padrão \texttt{"Renda Fixa"}.
+\end{itemize}
+
+\subsubsection*{Função \texttt{handleSubmit}}
+
+O comportamento é análogo ao de \texttt{Releases}: após validação, um objeto com os campos \texttt{id}, \texttt{description}, \texttt{value}, \texttt{type} e \texttt{date} é construído e passado para \texttt{addInvestment}, seguido da limpeza dos campos do formulário.
+
+% ─────────────────────────────────────────────
+\subsection{Contexto Global — \texttt{FinanceContext}}
+% ─────────────────────────────────────────────
+
+O \texttt{FinanceContext} centraliza o estado financeiro da aplicação, seguindo o padrão \textit{Context API} do React. O provedor \texttt{FinanceProvider}, declarado em \texttt{main.jsx} como ancestral de toda a árvore de componentes, disponibiliza os seguintes dados e funções:
+
+\begin{itemize}
+  \item \textbf{Estado de despesas:} \texttt{expenses} e \texttt{addExpense};
+  \item \textbf{Estado de investimentos:} \texttt{investments} e \texttt{addInvestment};
+  \item \textbf{Saldo e derivados:} \texttt{saldoFinal}, \texttt{totalDespesas}, \texttt{totalInvestido} e \texttt{adicionarSaldo}.
+\end{itemize}
+
+Essa abordagem elimina a necessidade de \textit{prop drilling} — passagem explícita de dados por múltiplos níveis de componentes — tornando o estado acessível diretamente em qualquer folha da árvore via \texttt{useContext}.
+
+
+\section{Fluxo de Execução da Aplicação}
+
+Esta seção descreve, em ordem cronológica, como a aplicação é inicializada, como o estado global é construído, como o usuário navega entre as telas e como cada interação produz efeitos visíveis na interface. O objetivo é oferecer uma visão sistêmica do comportamento do código em tempo de execução.
+
+% ─────────────────────────────────────────────
+\subsection{Fase 1 — Inicialização}
+% ─────────────────────────────────────────────
+
+Quando o navegador carrega a aplicação, o ponto de entrada \texttt{main.jsx} é executado primeiro. Essa fase compreende três etapas sequenciais:
+
+\begin{enumerate}
+  \item \textbf{Construção do roteador.} A função \texttt{createBrowserRouter} processa o array de rotas e produz um objeto de roteador. Nenhum componente de página é renderizado ainda; o roteador apenas mapeia caminhos de URL a elementos React.
+
+  \item \textbf{Criação da raiz React.} \texttt{createRoot} localiza o elemento \texttt{<div id="root">} no HTML e prepara o ponto de montagem. A partir deste momento, o React assume o controle do DOM dentro desse elemento.
+
+  \item \textbf{Renderização inicial da árvore.} O método \texttt{.render()} é chamado com a seguinte hierarquia de componentes:
+
+\begin{verbatim}
+StrictMode
+  └── FinanceProvider
+        └── RouterProvider
+\end{verbatim}
+
+  O \texttt{FinanceProvider} é instanciado antes do \texttt{RouterProvider}, o que garante que o contexto financeiro já existe no momento em que qualquer componente de página for montado.
+\end{enumerate}
+
+% ─────────────────────────────────────────────
+\subsection{Fase 2 — Construção do Estado Global}
+% ─────────────────────────────────────────────
+
+Com a montagem do \texttt{FinanceProvider}, o estado global da aplicação é inicializado. Internamente, o provedor define com \texttt{useState} os arrays \texttt{expenses} e \texttt{investments} (ambos começando vazios) e os valores numéricos de saldo. As funções \texttt{addExpense}, \texttt{addInvestment} e \texttt{adicionarSaldo} são criadas neste momento e permanecem estáveis durante todo o ciclo de vida da aplicação.
+
+Todos esses valores são disponibilizados pelo \texttt{FinanceContext.Provider}, que os injeta na árvore de componentes. A partir deste ponto, qualquer componente filho pode consumir o contexto via \texttt{useContext(FinanceContext)} sem receber dados por \textit{props}.
+
+% ─────────────────────────────────────────────
+\subsection{Fase 3 — Resolução da Rota Inicial}
+% ─────────────────────────────────────────────
+
+Com o \texttt{RouterProvider} montado, o roteador lê a URL atual do navegador e determina qual componente renderizar. Na primeira visita, a URL corresponde ao caminho \texttt{"/"}, o que faz o roteador montar o componente \texttt{Login}. Nenhum outro componente de página existe no DOM neste instante.
+
+A tela de \texttt{Login} é puramente de autenticação e não consome o \texttt{FinanceContext}. Ao completar o login, a navegação programática (tipicamente via \texttt{useNavigate} ou via componente \texttt{<Link>}) altera a URL para \texttt{/home}, disparando a fase seguinte.
+
+% ─────────────────────────────────────────────
+\subsection{Fase 4 — Renderização do Painel Principal (\texttt{Home})}
+% ─────────────────────────────────────────────
+
+Quando a URL muda para \texttt{/home}, o roteador desmonta o componente \texttt{Login} e monta o componente \texttt{Home}. Durante a montagem, ocorre a seguinte sequência interna:
+
+\begin{enumerate}
+  \item \textbf{Consumo do contexto.} O hook \texttt{useContext(FinanceContext)} é executado, e o componente recebe \texttt{saldoFinal}, \texttt{totalDespesas}, \texttt{totalInvestido} e \texttt{adicionarSaldo} diretamente do provedor.
+
+  \item \textbf{Inicialização do estado local.} O hook \texttt{useState('')} cria o estado \texttt{novoSaldo}, que controla o campo de entrada de saldo.
+
+  \item \textbf{Renderização da interface.} O componente produz o JSX com os valores atuais do contexto — neste momento todos zerados — e exibe o formulário de adição de saldo.
+\end{enumerate}
+
+\subsubsection*{Ciclo de Adição de Saldo}
+
+Quando o usuário preenche o campo e submete o formulário, o seguinte fluxo ocorre:
+
+\begin{enumerate}
+  \item O evento \texttt{onSubmit} dispara \texttt{handleAumentarSaldo};
+  \item A função valida o valor digitado em \texttt{novoSaldo};
+  \item \texttt{adicionarSaldo(novoSaldo)} é chamada, atualizando o estado global no \texttt{FinanceProvider};
+  \item O React detecta a mudança de estado no provedor e re-renderiza todos os componentes que consomem \texttt{FinanceContext}, incluindo o próprio \texttt{Home};
+  \item A interface exibe o novo valor de \texttt{saldoFinal} imediatamente, sem recarregar a página;
+  \item O estado local \texttt{novoSaldo} é limpo, esvaziando o campo de entrada.
+\end{enumerate}
+
+% ─────────────────────────────────────────────
+\subsection{Fase 5 — Registro de Despesas (\texttt{Releases})}
+% ─────────────────────────────────────────────
+
+Ao navegar para \texttt{/releases}, o roteador monta o componente \texttt{Releases}. Três estados locais independentes — \texttt{description}, \texttt{value} e \texttt{category} — são inicializados. O estado global \texttt{expenses}, vindo do contexto, é utilizado para listar as despesas já registradas na tela.
+
+\subsubsection*{Ciclo de Registro de Despesa}
+
+\begin{enumerate}
+  \item O usuário preenche os campos do formulário; cada digitação atualiza o respectivo estado local via \texttt{onChange};
+  \item Ao submeter, \texttt{handleSubmit} é chamada;
+  \item Um novo objeto de despesa é construído com \texttt{id} gerado por \texttt{Date.now()}, os valores dos estados locais e a data atual formatada;
+  \item \texttt{addExpense(objeto)} é chamada, adicionando a despesa ao array \texttt{expenses} no \texttt{FinanceProvider};
+  \item O React re-renderiza todos os consumidores do contexto: \texttt{Releases} exibe a nova despesa na lista, e \texttt{Home} (caso esteja montado) teria seu \texttt{totalDespesas} e \texttt{saldoFinal} atualizados;
+  \item Os campos \texttt{description} e \texttt{value} são limpos; \texttt{category} mantém seu valor para facilitar lançamentos consecutivos da mesma categoria.
+\end{enumerate}
+
+% ─────────────────────────────────────────────
+\subsection{Fase 6 — Registro de Investimentos (\texttt{Investments})}
+% ─────────────────────────────────────────────
+
+O fluxo do componente \texttt{Investments} é estruturalmente idêntico ao de \texttt{Releases}. A diferença reside nos dados manipulados: o campo \texttt{type} substitui \texttt{category}, o array \texttt{investments} substitui \texttt{expenses}, e a função \texttt{addInvestment} é invocada no lugar de \texttt{addExpense}.
+
+O efeito cascata no contexto é análogo: após \texttt{addInvestment} ser chamada, o estado \texttt{totalInvestido} no provedor é recalculado, e o \texttt{saldoFinal} exibido em \texttt{Home} é atualizado proporcionalmente.
+
+% ─────────────────────────────────────────────
+\subsection{Fase 7 — Visualização de Indicadores (\texttt{Kpis})}
+% ─────────────────────────────────────────────
+
+O componente \texttt{Kpis} não possui estado local nem realiza mutações no contexto. É um componente exclusivamente de leitura. Ao ser montado via \texttt{/kpis}, o seguinte processamento ocorre:
+
+\begin{enumerate}
+  \item O array \texttt{expenses} é consumido do contexto em seu estado atual;
+  \item O \texttt{reduce} inicializa \texttt{totaisPorCategoria} com zero para cada uma das cinco categorias válidas;
+  \item O \texttt{forEach} itera sobre \texttt{expenses}, acumulando valores por categoria e no total geral;
+  \item O JSX é gerado com os totais calculados, exibindo barras de progresso proporcionais ao percentual de cada categoria sobre o total;
+  \item Como \texttt{Kpis} é consumidor do contexto, qualquer adição futura de despesa em \texttt{Releases} (em outra aba, por exemplo) causaria re-renderização automática e atualização dos indicadores.
+\end{enumerate}
+
+\section{Conclusão}
+
+O presente trabalho apresentou o desenvolvimento de uma aplicação web de controle financeiro pessoal construída com React, tendo como eixo central o gerenciamento de estado por meio da Context API. Ao longo das seções anteriores, foram detalhados a arquitetura dos componentes, as responsabilidades de cada módulo e o fluxo de execução que governa o comportamento do sistema em tempo de execução.
+
+A análise do projeto evidencia que a separação entre estado global e estado local foi a principal decisão arquitetural da aplicação. O \texttt{FinanceProvider} centraliza todos os dados financeiros relevantes — despesas, investimentos e saldo — e os disponibiliza de forma uniforme para os componentes consumidores sem a necessidade de passagem explícita de \textit{props}. Essa abordagem confere coesão ao sistema: qualquer alteração em um componente se propaga automaticamente para todos os demais que dependem do mesmo contexto, mantendo a interface consistente sem lógica de sincronização manual.
+
+A estrutura de roteamento adotada com \texttt{react-router-dom} complementa essa organização ao isolar cada funcionalidade em uma rota dedicada. O componente \texttt{Home} fornece a visão consolidada do patrimônio; \texttt{Releases} e \texttt{Investments} encapsulam os formulários de entrada de dados; e \texttt{Kpis} oferece uma camada analítica sobre os lançamentos registrados. Essa divisão respeita o princípio de responsabilidade única e facilita tanto a manutenção quanto a extensão futura do sistema.
+
+Do ponto de vista do fluxo de dados, a aplicação segue rigorosamente o modelo unidirecional característico do React: eventos de usuário disparam funções do contexto, que atualizam o estado global, que por sua vez provocam re-renderizações nos componentes afetados. Esse ciclo previsível reduz a superfície de erros e torna o comportamento do sistema rastreável em cada etapa.
+
+Como perspectivas de evolução, o projeto poderia incorporar persistência de dados via \textit{localStorage} ou integração com uma API externa, de modo que as informações financeiras sobrevivam ao encerramento da sessão do navegador. A adição de autenticação real no componente \texttt{Login}, a implementação de filtros e intervalos de data nos lançamentos, e a exportação dos dados em formato PDF ou CSV são extensões naturais que seguiriam a mesma arquitetura estabelecida sem exigir reestruturação significativa do código existente.
+
+Em síntese, a aplicação demonstra que os recursos nativos do React — Context API, hooks e roteamento baseado em componentes — são suficientes para construir um sistema de informação funcional, organizado e de fácil compreensão, sem a necessidade de bibliotecas de gerenciamento de estado externas. A clareza do fluxo de execução e a separação de responsabilidades entre os módulos constituem os principais pontos fortes da solução desenvolvida.
+
+\clearpage
+\begin{thebibliography}{99}
+
+\bibitem{react}
+META PLATFORMS, INC.
+\textit{React Documentation}.
+Disponível em: \url{https://react.dev/}.
+Acesso em: 09 mai. 2026.
+
+\bibitem{nodejs}
+OPENJS FOUNDATION.
+\textit{Node.js Documentation}.
+Disponível em: \url{https://nodejs.org/docs/latest/api/}.
+Acesso em: 09 mai. 2026.
+
+\bibitem{tailwind}
+TAILWIND LABS.
+\textit{Tailwind CSS Documentation}.
+Disponível em: \url{https://tailwindcss.com/docs}.
+Acesso em: 11 mai. 2026.
+
+\bibitem{postcss}
+POSTCSS.
+\textit{PostCSS Documentation}.
+Disponível em: \url{https://postcss.org/}.
+Acesso em: 12 mai. 2026.
+
+\bibitem{npm}
+NPM, INC.
+\textit{npm Documentation}.
+Disponível em: \url{https://docs.npmjs.com/}.
+Acesso em: 09 mai. 2026.
+
+\end{thebibliography}
+
+\end{document}
